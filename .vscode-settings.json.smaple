@@ -1,0 +1,10 @@
+// .vscode/settings.json
+{
+  "deno.enable": true,
+  "deno.import_map": "/pathTo/deno-ride/import_map.json",
+  "deno.unstable": false,
+  "deno.import_intellisense_origins": {
+    "https://deno.land": true,
+  },
+  "deno.lint": true,
+}
