@@ -1,9 +1,11 @@
-"use strict";
+import { DOMParser } from 'https://deno.land/x/deno_dom/deno-dom-wasm.ts';
 const url = 'http://books.toscrape.com/';
 try {
     const res = await fetch(url);
     const html = await res.text();
-    console.log(html);
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const pageHeader = doc.querySelector('.header').querySelector('.h1').textContent;
+    console.log(pageHeader);
 }
 catch (error) {
     console.log(error);
